@@ -226,8 +226,6 @@ res.status(200);
   console.log('updated');
 });
 
-});
-
 app.get('/', function(req, res) {
     res.render('tv.ejs');
 });
