@@ -196,6 +196,38 @@ request.post({
 });
 
 
+app.get('/larbi', function(req, res){
+
+res.setHeader('Content-Type', 'text/plain');
+res.status(200);
+
+  res.json({
+   "messages": [
+      {
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"generic",
+            "elements":[
+              {
+                "title":"c'est parti !",
+                "image_url":"http://www.lepoint.fr/images/2012/05/02/debat-566573-jpg_388849_660x281.JPG",
+                "buttons":[
+                  {
+                    "type": "show_block",
+                    "block_name": "stop_block",
+                    "title": "J'ai fini !"
+                  }]
+              }]
+          }}
+      }]
+  });
+  res.end();
+  console.log('updated');
+});
+
+});
+
 app.get('/', function(req, res) {
     res.render('tv.ejs');
 });
